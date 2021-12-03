@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_collection_literals
+
 class Task {
   int? id;
   String? title;
@@ -5,7 +7,7 @@ class Task {
   String? priority;
   int? status;
 
-  Task({this.title,this.date, this.priority, this.status});
+  Task({this.title, this.date, this.priority, this.status});
 
   Task.withId({this.id, this.title, this.date, this.priority, this.status});
 

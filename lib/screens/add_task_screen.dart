@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:todoapp/config/config.dart';
 import 'package:todoapp/helpers/database_helper.dart';
 import 'package:todoapp/models/task_model.dart';
 
@@ -102,7 +103,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   child: Icon(
                     Icons.arrow_back_ios,
                     size: 30,
-                    color: Theme.of(context).primaryColor,
+                    color: Config.appThemeColors,
                   ),
                 ),
                 const SizedBox(
@@ -158,7 +159,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                           isDense: true,
                           icon: Icon(Icons.arrow_drop_down_circle),
                           iconSize: 22.0,
-                          iconEnabledColor: Theme.of(context).primaryColor,
+                          iconEnabledColor: Config.appThemeColors,
                           style: TextStyle(fontSize: 18),
                           decoration: InputDecoration(
                               labelText: 'Priority',
@@ -194,7 +195,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         height: 60.0,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
+                            color: Config.appThemeColors,
                             borderRadius: BorderRadius.circular(30.0)),
                         child: TextButton(
                           onPressed: _submit,
@@ -211,7 +212,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                               height: 60.0,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
+                                  color: Config.appThemeColors,
                                   borderRadius: BorderRadius.circular(30.0)),
                               child: TextButton(
                                 onPressed: _delete,

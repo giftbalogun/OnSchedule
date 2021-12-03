@@ -1,0 +1,15 @@
+Simple Todo List with easy User Interface. It can be used as a general to do list for your life. 
+
+Don't want to forget something, just pull up the app and type it. Check it off when you are done. It's that easy.
+
+Let your brain do the complex thing, relax and set what you want to do on the app.
+
+Here are some of the features of the app:
+
+* Minimalistic design.
+* Simple flat list.
+* Add anything that needs to be remembered or done with one click.
+* Check things off by clicking on the checkbox.
+* Set Priority to your Apps.
+* There is never a need to delete anything and you can search everything.
+* Use your keyboard's build in emoticon / emoji function for icons in list.

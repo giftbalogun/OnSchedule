@@ -3,9 +3,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:todoapp/config/config.dart';
 import 'package:todoapp/helpers/database_helper.dart';
 import 'package:todoapp/models/task_model.dart';
 import 'package:todoapp/screens/add_task_screen.dart';
+import 'package:todoapp/widget/drawer.dart';
 
 class TodoListScreen extends StatefulWidget {
   @override
@@ -58,7 +60,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                 DatabaseHelper.instance.updateTask(task);
                 _updateTaskList();
               },
-              activeColor: Theme.of(context).primaryColor,
+              activeColor: Config.appThemeColors,
               value: task.status == 1 ? true : false,
             ),
             onTap: () => Navigator.push(
@@ -73,11 +75,37 @@ class _TodoListScreenState extends State<TodoListScreen> {
     );
   }
 
+  AppBar _buildAppBar() {
+    return AppBar(
+      title: Text(
+        'All Schedules',
+        style: TextStyle(
+            color: Config.appThemeColors,
+            fontSize: 30,
+            fontWeight: FontWeight.bold),
+      ),
+      backgroundColor: Colors.transparent,
+      elevation: 0.0,
+      actions: [
+        IconButton(
+          icon: Image.asset(
+            'images/logot.png',
+            height: 50,
+          ),
+          onPressed: null,
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: _buildAppBar(),
+      drawer: NavDrawer(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Config.appThemeColors,
         onPressed: () => {
           Navigator.push(
             context,
@@ -114,9 +142,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'All Schedules',
+                        '',
                         style: TextStyle(
-                            color: Colors.pink,
+                            color: Config.appThemeColors,
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
