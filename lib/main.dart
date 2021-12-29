@@ -1,20 +1,19 @@
 // ignore_for_file: use_key_in_widget_constructors
 
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/blocs/ads_bloc.dart';
-import 'package:todoapp/config/config.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:todoapp/screens/todo_list_screen.dart';
+import 'package:todoapp/splash.dart';
 
 import 'blocs/settings_bloc.dart';
 import 'blocs/theme_bloc.dart';
+import 'services/notification_service.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initNotification();
   runApp(MyApp());
 }
 
@@ -44,6 +43,7 @@ class MyApp extends StatelessWidget {
         builder: (_, mode, child) {
           return MultiProvider(
             providers: [
+              ChangeNotifierProvider(create: (_) => NotificationService()),
               ChangeNotifierProvider<SettingsBloc>(
                   create: (context) => SettingsBloc()),
               ChangeNotifierProvider<AdsBloc>(create: (context) => AdsBloc()),
@@ -51,19 +51,7 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               navigatorObservers: [firebaseObserver],
-              color: Config.appThemeColors,
-              home: AnimatedSplashScreen(
-                duration: 4000,
-                splash: const Image(
-                  height: 240,
-                  width: 380,
-                  image: AssetImage(Config.appIconp),
-                  fit: BoxFit.contain,
-                ),
-                nextScreen: TodoListScreen(),
-                splashTransition: SplashTransition.sizeTransition,
-                backgroundColor: Config.appThemeColors,
-              ),
+              home: SplashScreen(),
             ),
           );
         },

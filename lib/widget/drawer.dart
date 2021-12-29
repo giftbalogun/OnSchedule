@@ -5,6 +5,7 @@ import 'package:todoapp/config/config.dart';
 import 'package:todoapp/screens/about.dart';
 import 'package:todoapp/screens/todo_list_screen.dart';
 import 'package:todoapp/services/app_service.dart';
+import 'package:todoapp/services/notification_service.dart';
 import 'package:todoapp/utils/next_screen.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -112,7 +113,7 @@ class NavDrawer extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => Portfolio()));
               },
-            )
+            ),
           ],
         ),
       ),

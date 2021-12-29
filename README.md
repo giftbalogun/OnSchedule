@@ -37,7 +37,18 @@
 
 ## :dart: About ##
 
-Describe your project
+Simple Todo List with easy User Interface. It can be used as a general to do list for your life. 
+Don't want to forget something, just pull up the app and type it. Check it off when you are done. It's that easy.
+Let your brain do the complex thing, relax and set what you want to do on the app.
+Here are some of the features of the app:
+
+* Minimalistic design.
+* Simple flat list.
+* Add anything that needs to be remembered or done with one click.
+* Check things off by clicking on the checkbox.
+* Set Priority to your Apps.
+* There is never a need to delete anything and you can search everything.
+* Use your keyboard's build in emoticon / emoji function for icons in list.
 
 ## :sparkles: Features ##
 
@@ -69,10 +80,10 @@ $ git clone https://github.com/giftbalogun/OnSchedule
 $ cd OnSchedule
 
 # Install dependencies
-$ yarn
+$ flutter pub get
 
 # Run the project
-$ yarn start
+$ flutter run
 
 # The server will initialize in the <http://localhost:3000>
 ```
@@ -82,7 +93,7 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/giftbalogun" target="_blank">Gift Balogun</a>
 
 &#xa0;
 

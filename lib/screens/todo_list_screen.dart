@@ -3,10 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:todoapp/config/config.dart';
 import 'package:todoapp/helpers/database_helper.dart';
 import 'package:todoapp/models/task_model.dart';
 import 'package:todoapp/screens/add_task_screen.dart';
+import 'package:todoapp/services/notification_service.dart';
 import 'package:todoapp/widget/drawer.dart';
 
 class TodoListScreen extends StatefulWidget {
@@ -21,7 +23,13 @@ class _TodoListScreenState extends State<TodoListScreen> {
   @override
   void initState() {
     super.initState();
+    Provider.of<NotificationService>(context, listen: false).initNotification();
+    _showNotificationsAfterSecond();
     _updateTaskList();
+  }
+
+  void _showNotificationsAfterSecond() async {
+    await NotificationService().ReminderNotifications();
   }
 
   _updateTaskList() {
